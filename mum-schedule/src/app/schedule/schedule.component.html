@@ -1,0 +1,46 @@
+<p>schedule works!</p>
+
+
+
+<!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Block</th>
+        <th scope="col">Course</th>
+        <th scope="col">Title</th>
+        <th scope="col">Faculty</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+      </tr>
+    </thead>
+    <tr *ngFor='let block of schedule'>
+      {{block.blockName}}{{block.courses}}{{block.courses}}
+    </tr>
+   
+    
+  </table> -->
+  
+
+  <!-- <li *ngFor='let block of courses'>
+    <li *ngFor='let course of block'>
+
+    {{course.id}},    {{course.courseCode}}, {{course.title}}
+    <!-- {{block.s}}
+    {{block.startDate}} -->
+    <!-- {{block.courses}} -->
+  
+
+    <ng-template ngFor let-schedule [ngForOf]="schedule" >
+      <tr *ngFor="let child of schedule.courses">
+          <td>
+              {{ child.id }}
+          </td>
+          <td> 
+              {{ child.title }}
+          </td>
+          <td> 
+            {{ child.courseCode }}
+          </td>
+      </tr>
+  </ng-template>
