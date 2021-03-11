@@ -30,17 +30,48 @@
     {{block.startDate}} -->
     <!-- {{block.courses}} -->
   
+    
 
-    <ng-template ngFor let-schedule [ngForOf]="schedule" >
-      <tr *ngFor="let child of schedule.courses">
-          <td>
-              {{ child.id }}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th scope="col">Block</th>
+          <th scope="col">Course</th>
+          <th scope="col">Title</th>
+          <th scope="col">Faculty</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+        </tr>
+      </thead>
+
+    <ng-template ngFor let-block [ngForOf]="blocks">
+      <tr *ngFor="let course of block.courses ;  let i=index">
+        <td>
+          {{block.blockName}}
+        </td>
+         
+          <td> 
+              {{ course.courseCode }}
+          </td>
+
+          <td> 
+            {{ course.title }}
           </td>
           <td> 
-              {{ child.title }}
+            {{course.faculty.fullName}}
           </td>
+
           <td> 
-            {{ child.courseCode }}
+            {{ block.startDate }}
           </td>
+
+          <td> 
+            {{ block.endDate }}
+          </td>
+
+        
+         
       </tr>
   </ng-template>
+  </table>

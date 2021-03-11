@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{BackendRequestService} from '../backend-request.service'
+
 
 @Component({
   selector: 'app-registered-courses',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registered-courses.component.css']
 })
 export class RegisteredCoursesComponent implements OnInit {
+  public records: any;
 
-  constructor() { }
+  constructor(private backendService:BackendRequestService) { }
 
   ngOnInit(): void {
-  }
 
+    this.backendService.getAllRegisteredRecords().subscribe(data=>{
+      console.log("recieved records+++++++")
+
+      console.log(data);
+      this.records=data;
+      // this.courses=this.schedule[0].co
+  });
+
+}
 }

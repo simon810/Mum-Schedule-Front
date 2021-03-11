@@ -9,32 +9,17 @@ import{BackendRequestService} from '../backend-request.service'
 })
 export class ScheduleComponent implements OnInit {
 
-  public headers= ['Block','Course','Title','Faculty','Start Date','End Date']
 
-  public schedule: any;
-  // public courses: any;
-  public courses: Array<any>=[{}];
+  public blocks: any;
+ 
 
   constructor(private backendService:BackendRequestService) { }
 
   ngOnInit(): void {
     this.backendService.getAllBlocks().subscribe(data=>{
+      console.log("list of blocks +++++++++++++++++")
       console.log(data);
-      this.schedule=data;
-      // this.courses=this.schedule[0].courses;
-      
-      var i=0;
-      for(var c in this.schedule){
-
-        this.courses[i]=this.schedule[i].courses;
-        i++
-
-      }
-
-      console.log(this.courses);
-
-    });
-
-  }
-
+      this.blocks=data;      
+      });
+    }
 }
