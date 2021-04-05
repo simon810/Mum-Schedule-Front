@@ -21,4 +21,8 @@ export class BackendRequestService {
   getAllRegisteredRecords() {
     return this.http.get(this.baseUrl + 'register-record/records');
   }
+
+  registerBlock(registerData:any) {
+    return this.http.post(this.baseUrl + 'register-record/record',registerData);
+  }
 }

@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { RegisteredCoursesComponent } from './registered-courses/registered-courses.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FacultyComponent } from './faculty/faculty.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScheduleComponent,
-    RegisteredCoursesComponent
+    RegisteredCoursesComponent,
+    FacultyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

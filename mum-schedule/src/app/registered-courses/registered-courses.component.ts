@@ -5,7 +5,7 @@ import{BackendRequestService} from '../backend-request.service'
 @Component({
   selector: 'app-registered-courses',
   templateUrl: './registered-courses.component.html',
-  styleUrls: ['./registered-courses.component.css']
+  styleUrls: []
 })
 export class RegisteredCoursesComponent implements OnInit {
   public records: any;
